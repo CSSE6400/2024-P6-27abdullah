@@ -22,7 +22,7 @@ resource "aws_lb" "taskoverflow" {
         load_balancer_type = "application"
         subnets = data.aws_subnets.private.ids
         security_groups = [aws_security_group.taskoverflow.id]
-    }
+}
     
 resource "aws_security_group" "taskoverflow" {
     name = "taskoverflow"
@@ -53,4 +53,3 @@ resource "aws_lb_listener" "todo" {
         target_group_arn = aws_lb_target_group.todo.arn
     }
 }
-
