@@ -4,6 +4,10 @@ resource "aws_appautoscaling_target" "todo" {
     resource_id = "service/taskoverflow/taskoverflow"
     scalable_dimension = "ecs:service:DesiredCount"
     service_namespace = "ecs"
+
+    depends_on = [
+        aws_ecs_service.taskoverflow
+    ]
 }
 
 resource "aws_appautoscaling_policy" "todo-cpu" {
@@ -22,4 +26,3 @@ resource "aws_appautoscaling_policy" "todo-cpu" {
         target_value = 20
     }
 }
-

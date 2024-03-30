@@ -23,7 +23,7 @@ resource "aws_lb" "taskoverflow" {
         subnets = data.aws_subnets.private.ids
         security_groups = [aws_security_group.taskoverflow.id]
 }
-    
+
 resource "aws_security_group" "taskoverflow" {
     name = "taskoverflow"
     description = "TaskOverflow Security Group"

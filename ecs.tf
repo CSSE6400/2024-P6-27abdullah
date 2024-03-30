@@ -62,7 +62,6 @@ resource "aws_ecs_service" "taskoverflow" {
     container_name = "todo"
     container_port = 6400
   }
-
 }
 
 resource "aws_security_group" "todo" {
